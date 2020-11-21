@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D1842251-FCDE-4368-AFD7-6093EE0B08D5}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Bloxx</RootNamespace>
+    <AssemblyName>Bloxx</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MonoGamePlatform>Windows</MonoGamePlatform>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\$(MonoGamePlatform)\$(Platform)\$(Configuration)\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;WINDOWS</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\$(MonoGamePlatform)\$(Platform)\$(Configuration)\</OutputPath>
+    <DefineConstants>TRACE;WINDOWS</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="OpenSimplexNoise.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Delegates.cs" />
+    <Compile Include="Source\GameScreen.cs" />
+    <Compile Include="Source\IConvertable.cs" />
+    <Compile Include="Source\Main.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Source\Map\Biomes\Biome.cs" />
+    <Compile Include="Source\Map\Biomes\Desert.cs" />
+    <Compile Include="Source\Map\Biomes\Plains.cs" />
+    <Compile Include="Source\Map\Biomes\Snow.cs" />
+    <Compile Include="Source\Map\BlockBehaviour\BaseBehaviour.cs" />
+    <Compile Include="Source\Map\BlockBehaviour\SandBehaviour.cs" />
+    <Compile Include="Source\Map\BlockBehaviour\TileBehaviour.cs" />
+    <Compile Include="Source\Map\BlockBehaviour\VineBehaviour.cs" />
+    <Compile Include="Source\Map\Chunk.cs" />
+    <Compile Include="Source\Map\Structure.cs" />
+    <Compile Include="Source\Map\Tile.cs" />
+    <Compile Include="Source\Map\TileData.cs" />
+    <Compile Include="Source\Map\World.cs" />
+    <Compile Include="Source\Menus\MainMenu.cs" />
+    <Compile Include="Source\NPCs\FallingBlock.cs" />
+    <Compile Include="Source\NPCs\Item.cs" />
+    <Compile Include="Source\NPCs\NPC.cs" />
+    <Compile Include="Source\NPCs\Player.cs" />
+    <Compile Include="Source\NPCs\PlayerInput.cs" />
+    <Compile Include="Source\NPCs\Transform.cs" />
+    <Compile Include="Source\Settings.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Lidgren.Network, Version=2012.1.7.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Lidgren.Network.1.0.2\lib\net451\Lidgren.Network.dll</HintPath>
+    </Reference>
+    <Reference Include="MonoCamera2D">
+      <HintPath>..\..\MonoExt\MonoCamera2D\bin\Release\netstandard2.0\MonoCamera2D.dll</HintPath>
+    </Reference>
+    <Reference Include="MonoExt">
+      <HintPath>..\..\MonoExt\MonoExt\bin\Release\netstandard2.0\MonoExt.dll</HintPath>
+    </Reference>
+    <Reference Include="MonoGame.Framework">
+      <HintPath>$(MonoGameInstallDirectory)\MonoGame\v3.0\Assemblies\Windows\MonoGame.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="MonoNet">
+      <HintPath>..\..\MonoExt\MonoNet\bin\Release\netstandard2.0\MonoNet.dll</HintPath>
+    </Reference>
+    <Reference Include="MonoUI">
+      <HintPath>..\..\MonoExt\MonoUI\bin\Release\netstandard2.0\MonoUI.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpHelper">
+      <HintPath>..\..\SharpHelper\SharpHelper\bin\Release\netstandard2.0\SharpHelper.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <MonoGameContentReference Include="Content\Content.mgcb" />
+    <None Include="app.config" />
+    <None Include="app.manifest" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Content.Builder.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
