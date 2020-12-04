@@ -114,10 +114,10 @@ namespace Bloxx.Source.Map
             bool stoneFunc(Tile tile) => tile.Data.category == TileData.Category.STONE;
 
             // J Shrine
-            PlaceStructInArea(new Structure("C:/Users/Jason/Documents/Debug.txt"), height - 80, height - 20, stoneFunc);
+            PlaceStructInArea(new Structure("JShrine"), height - 80, height - 20, stoneFunc);
 
             // Dungeons
-            var dungeon = new Structure("C:/Users/Jason/Documents/Debug2.txt");
+            var dungeon = new Structure("Dungeon");
 
             for (int i = 0; i < 35; i++)
                 PlaceStructInArea(dungeon, 200, height - 25, stoneFunc);
@@ -303,11 +303,7 @@ namespace Bloxx.Source.Map
                 }
             }
 
-            //var jShrine = new Structure("C:/Users/Jason/Documents/Debug.txt");
-
             s.Place(this, x, y);
-
-            //LoadStructure("C:/Users/Jason/Documents/Debug.txt", x, y);
         }
 
         

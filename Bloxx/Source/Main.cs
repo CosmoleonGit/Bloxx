@@ -22,8 +22,13 @@ namespace Bloxx
         //public static readonly int screenWidth = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width,
         //                           screenHeight = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height;
 
+#if DEBUG
+        public const int screenWidth = 720,
+                          screenHeight = 480;
+#else
         public const int screenWidth = 1920,
                           screenHeight = 1080;
+#endif
 
         //public const int screenWidth = 720,
         //                 screenHeight = 480;
@@ -43,7 +48,11 @@ namespace Bloxx
             {
                 PreferredBackBufferWidth = screenWidth,
                 PreferredBackBufferHeight = screenHeight,
+#if DEBUG
+                IsFullScreen = false
+#else
                 IsFullScreen = true
+#endif
             };
             
             Content.RootDirectory = "Content";

@@ -5,6 +5,7 @@ using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
+using System.Diagnostics;
 
 namespace Bloxx.Source.Map
 {
@@ -17,7 +18,7 @@ namespace Bloxx.Source.Map
 
         public Structure(string path)
         {
-            using (var reader = new StreamReader(path))
+            using (var reader = new StreamReader($"Structures/{path}.txt"))
             {
                 int w = int.Parse(reader.ReadLine());
                 int h = int.Parse(reader.ReadLine());

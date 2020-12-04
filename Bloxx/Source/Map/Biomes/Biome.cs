@@ -16,7 +16,7 @@ namespace Bloxx.Source.Map.Biomes
         public virtual void GenerateX(World world, int x)
         {
             if (tree == null)
-                tree = new Structure("C:/Users/Jason/Documents/Debug3.txt");
+                tree = new Structure("Tree");
 
             int vine = 0;
             bool flowering = false;
